@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <base href="/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="stylesheet" href="assets/css/main.lib.css" />
+    <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
+    <script src="assets/js/main.lib.js"></script>
+    <script src="assets/js/main.app.js"></script>
+</head>
+
+<body>
+    <ng-include src="'include/header.html'"></ng-include>
+    <div id="wrap" ui-view=""></div>
+    <ng-include src="'include/footer.html'"></ng-include>
+</body>
+
+</html>
