@@ -16,9 +16,9 @@ git clone https://github.com/grvsooryen/mean-stack.git
 cd mean-stack
 npm install
 bower install
-cd dbdump
-mongorestore -d contactlist
-cd ../
+mongo
+    > use contactlist
+    > exit
 grunt
 node server.js
 ~~~~
