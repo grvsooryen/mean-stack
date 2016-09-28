@@ -39,4 +39,4 @@ jspm_packages
 
 # Ignore builds
 public
-app.js
+/app.js
