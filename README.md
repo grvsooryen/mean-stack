@@ -1,7 +1,7 @@
 # MEAN-Stack
 This is a basic template to develop and deploy application on mean stack
 
-### Prerquisites
+### Prerequisites
 Before installing this package you need certain tools installed on your system
 
 - NodeJs
