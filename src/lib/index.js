@@ -1,3 +1,4 @@
+'use strict'
 var app = require('./server.js');
 var fs = require('fs');
 var mongojs = require('mongojs');
