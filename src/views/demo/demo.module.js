@@ -2,11 +2,9 @@
     'use strict';
 
     angular
-        .module('app', [
+        .module('app.demo', [
             'ui.bootstrap',
-            'ui.router',
-            'ngCookies',
-            'app.demo'
+            'ui.router'
         ])
         .constant('CONFIG',{});
 })();

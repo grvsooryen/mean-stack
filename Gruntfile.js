@@ -82,7 +82,7 @@ module.exports = function(grunt) {
                     'src/views/app.js',
                     'src/views/app.route.js',
                     // 'src/views/app.directive.js',
-                    // 'src/views/**/*.module.js',
+                    'src/views/**/*.module.js',
                     'src/views/**/*.service.js',
                     // 'src/views/**/*.route.js',
                      'src/views/**/*.controller.js',
