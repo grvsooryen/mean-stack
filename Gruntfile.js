@@ -70,6 +70,7 @@ module.exports = function(grunt) {
                 src: [
                     'bower_components/jquery/dist/jquery.js',
                     'bower_components/bootstrap/dist/js/bootstrap.min.js',
+                    'bower_components/bootstrap-essentials/dist/js/bootstrap-essentials.min.js',
                     'bower_components/angular/angular.js',
                     'bower_components/angular-cookies/angular-cookies.js',
                     'bower_components/angular-ui-router/release/angular-ui-router.js',
@@ -93,6 +94,7 @@ module.exports = function(grunt) {
             libcss: {
                 src: [
                     'bower_components/bootstrap/dist/css/bootstrap.min.css',
+                    'bower_components/bootstrap-essentials/dist/css/bootstrap-essentials.min.css',
                     'bower_components/animate.css/animate.min.css',
                 ],
                 dest: 'public/assets/css/<%= library %>.css'
