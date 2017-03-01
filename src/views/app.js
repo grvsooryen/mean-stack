@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -8,5 +8,5 @@
             'ngCookies',
             'app.demo'
         ])
-        .constant('CONFIG',{});
+        .constant('CONFIG', {});
 })();

@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -30,7 +30,7 @@
 
         function addContact() {
             demoService.addContact(_this.contact)
-                .success(function(res) {
+                .then(function (res) {
                     refreshlist();
                     _this.contact = {};
                 });
@@ -38,23 +38,24 @@
 
         function removeContact(id) {
             demoService.removeContact(id)
-                .success(function(res) {
+                .then(function (res) {
                     refreshlist();
                     _this.contact = {};
+                    _this.editmode = false;
                 });
         }
 
         function editContact(id) {
             _this.editmode = true;
             demoService.editContact(id)
-                .success(function(res) {
-                    _this.contact = res;
+                .then(function (res) {
+                    _this.contact = res.data;
                 });
         }
 
         function updateContact(id) {
             demoService.updateContact(id, _this.contact)
-                .success(function(res) {
+                .then(function (res) {
                     refreshlist();
                     _this.contact = {};
                     _this.editmode = false;
@@ -63,8 +64,8 @@
 
         function refreshlist() {
             demoService.contactlist()
-                .success(function(res) {
-                    _this.contactList = res;
+                .then(function (res) {
+                    _this.contactList = res.data;
                 });
         }
     }

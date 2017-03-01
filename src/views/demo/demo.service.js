@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -42,7 +42,7 @@
 
         function removeContact(id) {
             var req = {
-                url: '/contact/remove/'  + id,
+                url: '/contact/remove/' + id,
                 method: 'DELETE'
             };
 
@@ -51,7 +51,7 @@
 
         function editContact(id) {
             var req = {
-                url: '/contact/edit/'  + id,
+                url: '/contact/edit/' + id,
                 method: 'GET'
             };
 
@@ -60,7 +60,7 @@
 
         function updateContact(id, data) {
             var req = {
-                url: '/contact/update/'  + id,
+                url: '/contact/update/' + id,
                 method: 'PUT',
                 data: data
             };

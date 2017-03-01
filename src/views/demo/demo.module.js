@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -6,5 +6,5 @@
             'ui.bootstrap',
             'ui.router'
         ])
-        .constant('CONFIG',{});
+        .constant('CONFIG', {});
 })();

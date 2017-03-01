@@ -11,13 +11,13 @@
             </th>
         </thead>
         <tbody>
-            <tr >
-                <td><input class="form-control" type="text" ng-model="demo.contact.name" > </td>
-                <td><input class="form-control" type="text" ng-model="demo.contact.email" > </td>
-                <td><input class="form-control" type="text" ng-model="demo.contact.number" > </td>
+            <tr>
+                <td><input class="form-control" type="text" ng-model="demo.contact.name"> </td>
+                <td><input class="form-control" type="text" ng-model="demo.contact.email"> </td>
+                <td><input class="form-control" type="text" ng-model="demo.contact.number"> </td>
                 <td>
-                    <button ng-show="demo.editmode" type="text" class="btn btn-default" ng-click="demo.updateContact(demo.contact._id)"><span class="glyphicon glyphicon-floppy-disk"></span></button> 
-                    <button ng-show="!demo.editmode" type="text" class="btn btn-default" ng-click="demo.addContact()"><span class="glyphicon glyphicon-plus"></span></button> 
+                    <button ng-show="demo.editmode" type="text" class="btn btn-default" ng-click="demo.updateContact(demo.contact._id)"><span class="glyphicon glyphicon-floppy-disk"></span></button>
+                    <button ng-show="!demo.editmode" type="text" class="btn btn-default" ng-click="demo.addContact()"><span class="glyphicon glyphicon-plus"></span></button>
                 </td>
             </tr>
             <tr ng-repeat="contact in demo.contactList">

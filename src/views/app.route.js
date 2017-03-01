@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -8,7 +8,7 @@
     config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider'];
 
     /* @ngInject */
-    function config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+    function config($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
         $stateProvider
             .state('home', {
                 url: '/',
@@ -26,7 +26,7 @@
                 templateUrl: 'src/views/demo/demo.html',
                 controller: 'DemoController as demo'
             });
-            
+
 
         $urlRouterProvider.otherwise('/');
 
@@ -34,6 +34,9 @@
         if (!$httpProvider.defaults.headers.get) {
             $httpProvider.defaults.headers.get = {};
         }
+
+        //location Preferences
+        $locationProvider.hashPrefix('');
 
         //disable IE ajax request caching
         $httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';

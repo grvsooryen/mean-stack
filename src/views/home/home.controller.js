@@ -10,7 +10,7 @@
     /* @ngInject */
     function HomeController() {
         var _this = this;
-        
+
         activate();
 
         ////////////////
