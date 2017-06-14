@@ -12,18 +12,18 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'src/views/home/home.html',
+                templateUrl: 'src/app/home/home.html',
                 controller: 'HomeController as home'
                 //title: 'Default home title'
             })
             .state('help', {
                 url: '/help',
-                templateUrl: 'src/views/help/help.html',
+                templateUrl: 'src/app/help/help.html',
                 controller: 'HelpController as help'
             })
             .state('demo', {
                 url: '/demo',
-                templateUrl: 'src/views/demo/demo.html',
+                templateUrl: 'src/app/demo/demo.html',
                 controller: 'DemoController as demo'
             });
 

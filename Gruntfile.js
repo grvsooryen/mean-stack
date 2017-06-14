@@ -11,7 +11,7 @@ var ngTemplatesOptions = {
     removeStyleLinkTypeAttributes: false
 };
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
 
     grunt.initConfig({
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         ============================== */
         ngtemplates: {
             app: {
-                src: 'src/views/**/*.html',
+                src: 'src/app/**/*.html',
                 dest: 'public/assets/js/app.template.js',
                 options: {
                     htmlmin: ngTemplatesOptions
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
         },
 
         jshint: {
-            files: ['src/views/**/*.js'],
+            files: ['src/app/**/*.js'],
             options: {
                 globals: {
                     jQuery: true
@@ -59,10 +59,9 @@ module.exports = function(grunt) {
         concat: {
             node: {
                 src: [
-                    'src/lib/*.js',
-                    'src/models/*.js',
-                    'src/controllers/**/*controller.js',
-                    'src/controllers/**/*route.js'
+                    'src/server/*.js',
+                    'src/server/**/*controller.js',
+                    'src/server/**/*route.js'
                 ],
                 dest: 'app.js'
             },
@@ -80,13 +79,13 @@ module.exports = function(grunt) {
             },
             angular: {
                 src: [
-                    'src/views/app.js',
-                    'src/views/app.route.js',
-                    // 'src/views/app.directive.js',
-                    'src/views/**/*.module.js',
-                    'src/views/**/*.service.js',
-                    // 'src/views/**/*.route.js',
-                     'src/views/**/*.controller.js',
+                    'src/app/app.js',
+                    'src/app/app.route.js',
+                    'src/app/app.directive.js',
+                    'src/app/**/*.module.js',
+                    'src/app/**/*.service.js',
+                    'src/app/**/*.route.js',
+                    'src/app/**/*.controller.js',
                     '<%= ngtemplates.app.dest %>'
                 ],
                 dest: 'public/assets/js/<%= application %>.js'
@@ -105,7 +104,7 @@ module.exports = function(grunt) {
         ======= */
         copy: {
             files: {
-                cwd: 'src/views/fonts',
+                cwd: 'src/app/fonts',
                 src: '**/*',
                 dest: 'public/assets/fonts',
                 expand: true
@@ -117,29 +116,38 @@ module.exports = function(grunt) {
                 expand: true
             },
             svg: {
-                cwd: 'src/views/img',
+                cwd: 'src/app/img',
                 src: '**/*.svg',
                 dest: 'public/assets/img',
                 expand: true
             },
             ico: {
-                cwd: 'src/views/img',
+                cwd: 'src/app/img',
                 src: '**/*.ico',
                 dest: 'public/assets/img',
                 expand: true
             },
             layout: {
-                cwd: 'src/views/include',
+                cwd: 'src/app/include',
                 src: '**/*.html',
                 dest: 'public/include',
                 expand: true
             },
             html: {
-                cwd: 'src/views',
+                cwd: 'src/app',
                 src: 'index.html',
                 dest: 'public',
                 expand: true
             }
+        },
+        watch: {
+            scripts: {
+                files: ['src/**/*.js', 'src/**/*.html'],
+                tasks: ['clean', 'ngtemplates', 'concat', 'copy', 'jshint'],
+                options: {
+                    reload: true,
+                },
+            },
         },
     });
 
@@ -147,8 +155,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.loadNpmTasks('grunt-angular-templates');
 
     grunt.registerTask('default', ['clean', 'ngtemplates', 'concat', 'copy', 'jshint']);
+    grunt.registerTask('server', ['concat:node', 'copy', 'jshint']);
+    grunt.registerTask('ui', ['ngtemplates', 'concat', 'copy', 'jshint']);
 };
