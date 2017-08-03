@@ -33,6 +33,8 @@
                 .then(function (res) {
                     refreshlist();
                     _this.contact = {};
+                }, function (res) {
+                    console.log("error");
                 });
         }
 
@@ -42,6 +44,8 @@
                     refreshlist();
                     _this.contact = {};
                     _this.editmode = false;
+                }, function (res) {
+                    console.log("error");
                 });
         }
 
@@ -50,6 +54,8 @@
             demoService.editContact(id)
                 .then(function (res) {
                     _this.contact = res.data;
+                }, function (res) {
+                    console.log("error");
                 });
         }
 
@@ -59,6 +65,8 @@
                     refreshlist();
                     _this.contact = {};
                     _this.editmode = false;
+                }, function (res) {
+                    console.log("error");
                 });
         }
 
@@ -66,6 +74,8 @@
             demoService.contactlist()
                 .then(function (res) {
                     _this.contactList = res.data;
+                }, function (res) {
+                    console.log("error");
                 });
         }
     }

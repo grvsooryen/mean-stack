@@ -19,7 +19,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "grunt && node server.js"
   },
   "author": "Gaurav Panchal",
   "license": "GPL-3.0"

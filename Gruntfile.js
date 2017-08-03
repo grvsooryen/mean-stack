@@ -109,7 +109,7 @@ module.exports = function (grunt) {
                 dest: 'public/assets/fonts',
                 expand: true
             },
-            Bootstrap: {
+            bootstrap: {
                 cwd: 'bower_components/bootstrap/dist/fonts',
                 src: '**/*',
                 dest: 'public/assets/fonts',
